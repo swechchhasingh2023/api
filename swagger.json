@@ -32,7 +32,6 @@
           {
               "name":"x-access-auth",
               "in":"header",
-              "required":true
           }
         ],
         "responses": {
