@@ -11,7 +11,7 @@ let {ObjectId} = require('mongodb')
 swaggerDocument.info.version= package.json
 app.use('/api-doc', swaggerUi.serve,swaggerUi.setup(swaggerDocument))
 
-let key = "12345678abcdef213"
+// let key = "12345678abcdef213"
 
 app.use(express.json())
 app.use(cors())
@@ -25,12 +25,14 @@ app.get('/category',async (req,res) => {
     let query = {};
     let collection = "category"
     let authKey = req.headers['x-access-auth']
-    if(authKey == key){
-        let output = await getData(collection,query)
-        res.status(200).send(output)
-    }else{
-        res.status(401).send(`Unaunthorised`) 
-    }
+    let output = await getData(collection,query)
+    res.status(200).send(output)
+    // if(authKey == key){
+    //     let output = await getData(collection,query)
+    //     res.status(200).send(output)
+    // }else{
+    //     res.status(401).send(`Unaunthorised`) 
+    // }
    
 })
 
