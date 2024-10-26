@@ -31,7 +31,7 @@ app.get('/category',async (req,res) => {
 
 app.get('/products', async (req,res)=>{
     let query = {}
-    let productId = req.query.productId;
+    let productId = req.query.category_id;
     let collection = "products"
     if(productId){
         query = {category_id:Number(productId)}
