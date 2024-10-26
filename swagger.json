@@ -31,7 +31,7 @@
         "parameters":[
           {
               "name":"x-access-auth",
-              "in":"header",
+              "in":"header"
           }
         ],
         "responses": {
